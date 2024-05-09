@@ -1,11 +1,14 @@
 import 'package:awesome_dio_interceptor/awesome_dio_interceptor.dart';
 import 'package:dio/dio.dart';
-import 'package:micro_dependency/shared/constants.dart';
+import 'package:logger/logger.dart';
+
+Logger logger = Logger();
 
 class CustomDio {
   final Dio dio;
-  CustomDio(this.dio) {
-    dio.options.baseUrl = kBaseURL;
+  final String? baseURL;
+  CustomDio(this.dio, {this.baseURL}) {
+    dio.options.baseUrl = baseURL ?? '';
     dio.options.connectTimeout = const Duration(seconds: 5);
     dio.interceptors.add(AwesomeDioInterceptor());
   }
@@ -15,10 +18,10 @@ class CustomDio {
     response = await dio.get(
       path,
       onReceiveProgress: (int sent, int total) {
-        kLogger.i('$sent $total');
+        logger.i('$sent $total');
       },
     );
-    kLogger.i(response.data);
+    logger.i(response.data);
     return response;
   }
 
@@ -27,10 +30,10 @@ class CustomDio {
     response = await dio.post(
       path,
       onReceiveProgress: (int sent, int total) {
-        kLogger.i('$sent $total');
+        logger.i('$sent $total');
       },
     );
-    kLogger.i(response.data);
+    logger.i(response.data);
     return response;
   }
 }

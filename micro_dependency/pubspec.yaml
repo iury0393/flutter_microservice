@@ -1,7 +1,7 @@
 name: micro_dependency
 description: "Where the dependencies are installed to be used in another service"
 publish_to: 'none'
-version: 0.0.3
+version: 0.1.0
 
 environment:
   sdk: '>=3.3.3 <4.0.0'
