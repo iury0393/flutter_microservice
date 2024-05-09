@@ -1,5 +1,5 @@
 name: micro_dependency
-description: "A new Flutter project."
+description: "Where the dependencies are installed to be used in another service"
 publish_to: 'none'
 version: 0.1.0
 
@@ -9,6 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^6.2.1
+  logger: ^2.2.0
+  dio: ^5.4.3+1
+  awesome_dio_interceptor: ^1.2.0
+  get_it: ^7.7.0
 
 dev_dependencies:
   flutter_test:
