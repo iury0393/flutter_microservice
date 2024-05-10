@@ -15,15 +15,9 @@ class _WaifuPageState extends State<WaifuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'Waifu tag',
-          style: textStyles.appBarTitle(
-            textColor: Colors.white,
-            size: textSize.big,
-          ),
-        ),
+      body: Text(
+        'Waifu',
+        style: textStyles.paragraph(textSize.big),
       ),
     );
   }

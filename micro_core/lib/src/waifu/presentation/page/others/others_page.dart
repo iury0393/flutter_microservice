@@ -15,15 +15,9 @@ class _OthersPageState extends State<OthersPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'Others tag',
-          style: textStyles.appBarTitle(
-            textColor: Colors.white,
-            size: textSize.big,
-          ),
-        ),
+      body: Text(
+        'Others',
+        style: textStyles.paragraph(textSize.big),
       ),
     );
   }
